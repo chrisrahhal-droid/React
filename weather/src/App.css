@@ -1,0 +1,96 @@
+/* Reset + base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #dbe7f3);
+  margin: 0;
+  padding: 40px;
+}
+
+/* Container for multiple cards */
+.weather-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Weather card */
+.weather-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Input field */
+.weather-card input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid #ccd6e0;
+  margin-bottom: 16px;
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+}
+
+.weather-card input:focus {
+  border-color: #4a90e2;
+}
+
+/* City */
+.weather-card h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2933;
+}
+
+/* Date */
+.weather-card .date {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0 16px;
+}
+
+/* Icon */
+.weather-card .icon {
+  font-size: 48px;
+  margin: 12px 0;
+}
+
+/* Temperature */
+.weather-card .temp {
+  font-size: 40px;
+  font-weight: 700;
+  color: #111827;
+  margin: 8px 0;
+}
+
+/* Description */
+.weather-card .description {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #374151;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* Wind */
+.weather-card .wind {
+  font-size: 12px;
+  color: #6b7280;
+}
