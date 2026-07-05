@@ -1,0 +1,179 @@
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --danger: #dc2626;
+  --bg: #f4f4f8;
+  --card-bg: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
+body {
+  color: var(--text);
+}
+
+/* ---- Navigation header ---- */
+/* MainNavigation renders: <div><h1/><div><Link/>...</div></div> */
+#root > div > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+#root > div > div:first-child h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+#root > div > div:first-child > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#root > div > div:first-child a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+#root > div > div:first-child a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---- Page content ---- */
+#root > div > div:last-child,
+#root > div > h1 {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#root > div > h1 {
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Favorites counter (first child of the meetups list) */
+#root > div > div:last-child > div:first-child {
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* ---- Meetup cards ---- */
+/* MeetupItem renders: <div><h1/><img/><p/><p/><div><button/></div></div> */
+#root > div > div:last-child > div:not(:first-child) {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+#root > div > div:last-child > div h1 {
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 1rem 1.25rem 0;
+}
+
+#root > div > div:last-child > div img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  margin-top: 1rem;
+}
+
+#root > div > div:last-child > div p {
+  margin: 0.5rem 1.25rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+#root > div > div:last-child > div p:first-of-type {
+  font-weight: 600;
+  color: var(--text);
+}
+
+#root > div > div:last-child > div > div {
+  padding: 1rem 1.25rem 1.5rem;
+  text-align: right;
+}
+
+/* ---- Buttons ---- */
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* ---- New meetup form ---- */
+form {
+  max-width: 560px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+form input,
+form textarea {
+  margin-bottom: 1.25rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  align-self: flex-end;
+}
